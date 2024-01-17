@@ -2,7 +2,29 @@ const buttonPlayHtml = document.getElementById("play-button")
 const gridHtml = document.getElementById("grid")
 let difficoltaHtml = document.getElementById("difficolta")
 
+
 function play(number, className) {
+
+    // let gameOver = false
+
+    // generate 16 random bombs
+    function random(max) {
+        return Math.floor(Math.random() * max) + 1
+    }
+
+    let arrayBombe = []
+
+    do {
+        let randomBomb = random(number)
+
+        if (!arrayBombe.includes(randomBomb)) {
+            arrayBombe.push(randomBomb)
+        }
+    } while (arrayBombe.length !== 16)
+
+    console.log(arrayBombe)
+
+
 
     gridHtml.classList.remove("hidden")
 
@@ -18,16 +40,39 @@ function play(number, className) {
         box.classList.add(className)
 
 
-        box.addEventListener("click", function () {
-            this.classList.toggle("clicked")
-            console.log("Il numero del box cliccato è: " + i)
-        })
+        function clickedBox() {
 
+            // if (gameOver = true) {
+            //     return
+            // }
+
+            if (arrayBombe.includes(i)) {
+                this.classList.add("bomb")
+                console.log("hai perso")
+
+                gameOver = true
+
+                box.removeEventListener("click", clickedBox)
+            } else {
+                this.classList.add("clicked")
+                console.log("Il numero del box cliccato è: " + i)
+
+                box.removeEventListener("click", clickedBox)
+            }
+
+
+
+        }
+
+
+        box.addEventListener("click", clickedBox)
 
         gridHtml.append(box)
 
     }
 }
+
+
 
 buttonPlayHtml.addEventListener("click", function () {
 

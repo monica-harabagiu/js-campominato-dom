@@ -88,6 +88,10 @@ main #grid .clicked {
     background-color: rgb(0, 208, 255);
 }
 
+main #grid .bomb {
+    background-color: rgb(255, 0, 89);
+}
+
 footer {
     height: 50px;
     background-color: white;
