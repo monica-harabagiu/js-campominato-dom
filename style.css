@@ -14,6 +14,11 @@ body {
     display: flex;
 }
 
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
 header {
     padding: 20px;
     justify-content: space-between;
@@ -54,9 +59,15 @@ main {
 
 main #grid {
     width: 40%;
-    margin: 50px auto;
+    margin: 30px auto;
     border: 1px solid black;
     flex-wrap: wrap;
+}
+
+main #score {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.5rem;
 }
 
 .hidden {
