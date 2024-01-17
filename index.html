@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Campo Minato Gris</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <header class="flex">
+        <div id="header-left" class="flex">
+            <figure>
+                <img src="./img/mobile-logo.png" alt="Logo" width="40">
+            </figure>
+            <h1>Campo Minato</h1>
+        </div>
+
+        <div id="header-right" class="flex">
+            <div>
+                <label for="difficolta">Difficoltà: </label>
+                <select name="difficolta" id="difficolta">
+                    <option value="easy">Easy</option>
+                    <option value="normal">Normal</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <button id="play-button" type="button">Play</button>
+        </div>
+    </header>
+
+    <main class="flex">
+
+        <div id="grid" class="flex hidden">
+
+        </div>
+
+    </main>
+
+    <footer class="flex">
+
+        <p>Made with <i class="fa-solid fa-heart"></i> by <a href="#">Boolean</a></p>
+
+    </footer>
+
+
+
+    <script src="./main.js"></script>
+
+</body>
+
+</html>
